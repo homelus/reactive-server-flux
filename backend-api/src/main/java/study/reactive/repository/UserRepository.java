@@ -12,9 +12,11 @@ import study.reactive.model.User;
 @Slf4j
 public class UserRepository {
 
-    public void insert(User user) {
-        log.info(user.toString());
-
+    public User insert(User user) {
+        log.info("## " + user.toString());
+        user.setName(user.getName() + "_modified");
+        user.setAge(user.getAge() + 10);
+        return user;
     }
 
 }
