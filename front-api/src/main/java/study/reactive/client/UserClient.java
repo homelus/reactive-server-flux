@@ -1,8 +1,6 @@
 package study.reactive.client;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -16,18 +14,11 @@ import study.reactive.model.User;
 @Slf4j
 public class UserClient {
 
-    public Mono<User> insert(User user) {
-
-        log.info(user.toString());
-
-        WebClient webClient = WebClient.builder()
-                .baseUrl("localhost:8892").build();
-
-        return webClient.method(HttpMethod.POST)
+    public Mono<User> insert(Mono<User> user) {
+        return WebClient.create("http://localhost:8892").post()
                 .uri("/user")
-                .body(Mono.just(user), User.class)
+                .body(user, User.class)
                 .retrieve()
-                .bodyToMono(User.class)
-                .log();
+                .bodyToMono(User.class);
     }
 }
