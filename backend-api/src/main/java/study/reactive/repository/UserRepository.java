@@ -2,6 +2,7 @@ package study.reactive.repository;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import reactor.core.publisher.Mono;
 import study.reactive.model.User;
 
 import java.util.List;
@@ -17,7 +18,7 @@ import static java.util.Arrays.asList;
 @Slf4j
 public class UserRepository {
 
-    public User insert(User user) {
+    public Mono<User> insert(User user) {
         log.info("## " + user.toString());
         try {
             TimeUnit.SECONDS.sleep(5);
@@ -25,7 +26,7 @@ public class UserRepository {
         }
         user.setName(user.getName() + "_modified");
         user.setAge(user.getAge() + 10);
-        return user;
+        return Mono.just(user);
     }
 
     public List<User> getInternalUsers() {

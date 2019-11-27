@@ -23,8 +23,8 @@ public class UserHandler {
 
     public Mono<ServerResponse> insertUser(ServerRequest request) {
         return request.bodyToMono(User.class)
-            .doOnNext(userRepository::insert)
-            .flatMap(usr -> ok().body(Mono.just(usr), User.class));
+            .flatMap(userRepository::insert)
+            .transform(usr -> ok().body(usr, User.class));
     }
 
     public Mono<ServerResponse> internalUsers(ServerRequest request) {
