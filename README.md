@@ -17,3 +17,5 @@ FRONT API <-> BACK API
 ### GET localhost:8891/users
 #### BACKAND API 에게 API를 3번 호출하지만 비동기로 사용자 목록을 조합하므로 API 들 중 최장 처리 시간에 맞추어 완료된다.
 
+### GET localhost:8891/adultsInSeoul
+#### BACKAND API 에게 3번의 API 를 호출해 응답받은 데이터를 검증하고 THIRDPARTY API 를 통해 한번더 가공한다.
