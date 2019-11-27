@@ -2,7 +2,7 @@
 
 API 간 통신을 Reactive 를 이용해 구현한다.
 
-FRONT API <-> BACK API 
+FRONT API <-> BACK API <br>
           <-> ThirdParty 
           
 - `WebFlux` 와 `WebClient` 를 사용하며 클라이언트의  `Reactor` 의 `Mono` 와 `Flux` 를 이용해 **비동기** 로 처리한다.
@@ -11,7 +11,7 @@ FRONT API <-> BACK API
 
 ## 예제
 
-### POST localhost:8891/user
+### POST localhost:8891/user {"name" : "jun", "age" : 30}
 #### 사용자를 추가할 때 Mono 를 이용해 데이터를 전달하고 저장된 데이터를 돌려받는다.
 
 ### GET localhost:8891/users
