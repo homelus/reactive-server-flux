@@ -1,4 +1,4 @@
-# reactive-server-flux-exmple
+# WebFlux 와 WebClient
 
 API 간 통신을 Reactive 를 이용해 구현한다.<br>
 
