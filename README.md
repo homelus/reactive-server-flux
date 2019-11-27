@@ -2,8 +2,7 @@
 
 API 간 통신을 Reactive 를 이용해 구현한다.
 
-FRONT API <-> BACK API <br>
-        <-> ThirdParty 
+![API 서버 간 통신](/resource/image/api.png)
           
 - `WebFlux` 와 `WebClient` 를 사용하며 클라이언트의  `Reactor` 의 `Mono` 와 `Flux` 를 이용해 **비동기** 로 처리한다.
 
