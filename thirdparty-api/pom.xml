@@ -8,9 +8,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>study.reactive</groupId>
-    <artifactId>front-api</artifactId>
+    <artifactId>thirdparty-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>front-api</name>
+    <name>thirdparty-api</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

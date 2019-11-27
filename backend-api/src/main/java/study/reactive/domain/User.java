@@ -1,6 +1,8 @@
-package study.reactive.model;
+package study.reactive.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
@@ -9,9 +11,12 @@ import lombok.ToString;
  */
 @Data
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     private String name;
+    private String location;
     private int age;
 
 }

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
-import study.reactive.model.User;
+import study.reactive.domain.User;
 
 @SpringBootTest
 class FrontApiApplicationTests {
