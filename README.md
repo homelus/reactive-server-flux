@@ -1,9 +1,9 @@
 # reactive-server-flux-exmple
 
-API 간 통신을 Reactive 를 이용해 구현한다.
-
+- API 간 통신을 Reactive 를 이용해 구현한다.
+<br>
 ![API 서버 간 통신](/resource/image/api.png)
-          
+<br>          
 - `WebFlux` 와 `WebClient` 를 사용하며 클라이언트의  `Reactor` 의 `Mono` 와 `Flux` 를 이용해 **비동기** 로 처리한다.
 
 비동기로 여러 서버들을 호출하며 얻은 결과값을 가공하여 NonBlocking 으로 연결되어 있던 클라이언트에게 이벤트를 통해 알려준다.
