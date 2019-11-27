@@ -25,6 +25,7 @@ public class UserRouter {
     RouterFunction<ServerResponse> routes() {
         return route()
                 .POST("/user", accept(APPLICATION_JSON), userHandler::insertUser)
+                .GET("/users", userHandler::compositeAllUsers)
                 .build();
 
     }

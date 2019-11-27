@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import study.reactive.model.User;
 import study.reactive.repository.UserRepository;
@@ -24,6 +25,18 @@ public class UserHandler {
         return request.bodyToMono(User.class)
             .doOnNext(userRepository::insert)
             .flatMap(usr -> ok().body(Mono.just(usr), User.class));
+    }
+
+    public Mono<ServerResponse> internalUsers(ServerRequest request) {
+        return ok().body(Flux.fromIterable(userRepository.getInternalUsers()), User.class);
+    }
+
+    public Mono<ServerResponse> externalUsers(ServerRequest request) {
+        return ok().body(Flux.fromIterable(userRepository.getExternalUsers()), User.class);
+    }
+
+    public Mono<ServerResponse> specialUsers(ServerRequest request) {
+        return ok().body(Flux.fromIterable(userRepository.getSpecialUsers()), User.class);
     }
 
 }
