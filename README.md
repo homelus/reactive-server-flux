@@ -1,5 +1,5 @@
-# WebFlux 와 WebClient
-
+# WebFlux 와 WebClient 예제 구현
+ 
 API 간 통신을 Reactive 를 이용해 구현한다.<br>
 
 ![API 서버 간 통신](/resource/image/api.png)
