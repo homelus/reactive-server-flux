@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import study.reactive.thirdpartyapi.domain.User;
+import study.reactive.domain.User;
 
 import java.util.concurrent.TimeUnit;
 
