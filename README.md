@@ -15,8 +15,15 @@ DB 와 연동되며 **도메인 데이터를 처리**하는 API
 
 **추가적인 정보를 제공**하는 API
 
-#### DOMAIN (도메인 모듈)
-#### TEST API (통합테스트용)
+- DOMAIN
+
+API 에서 사용되는 도메인 모듈
+
+- TEST API
+
+통합 테스트용 모듈
+
+## 서버간 구조도
 
 ![API 서버 간 통신](/resource/image/api.png)
 
