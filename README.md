@@ -4,10 +4,15 @@ API 간 통신을 Reactive 를 이용해 구현한다.<br>
 
 ## 예제는 3 개의 프로젝트와 도메인/테스트 모듈로 구성된다.
 - FRONT API<br>
+
 클라이언트의 요청을 받아 데이터를 **조합**하는 API
+
 - BACKEND API<br>
+
 DB 와 연동되며 **도메인 데이터를 처리**하는 API
+
 - THIRD PARTY API<br>
+
 **추가적인 정보를 제공**하는 API
 
 #### DOMAIN (도메인 모듈)
