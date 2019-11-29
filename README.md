@@ -10,7 +10,6 @@ API 간 통신을 Reactive 를 이용해 구현한다.<br>
 DB 와 연동되며 **도메인 데이터를 처리**하는 API
 
 3. THIRD PARTY API<br>
-
 **추가적인 정보를 제공**하는 API
 
 - DOMAIN
