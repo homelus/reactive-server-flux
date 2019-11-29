@@ -1,9 +1,8 @@
 package study.reactive.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+
+import javax.persistence.*;
 
 /**
  * @author playjun
@@ -13,11 +12,18 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name = "users")
+@EqualsAndHashCode
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String name;
     private String location;
     private int age;
+    private String type;
 
     public boolean isAdult() {
         return age > 19;
