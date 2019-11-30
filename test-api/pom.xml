@@ -3,14 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>study.reactive</groupId>
-        <artifactId>reactive-server-flux-exmple</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.1.RELEASE</version>
+        <relativePath/> <!-- lookup parent from service -->
     </parent>
     <groupId>study.reactive</groupId>
-    <artifactId>thirdparty-api</artifactId>
+    <artifactId>test-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>thirdparty-api</name>
+    <name>test-api</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -19,9 +20,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>study.reactive</groupId>
-            <artifactId>domain</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>
@@ -30,10 +30,17 @@
         </dependency>
 
         <dependency>
+            <groupId>study.reactive</groupId>
+            <artifactId>domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -44,11 +51,6 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-test</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 

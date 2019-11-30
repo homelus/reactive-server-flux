@@ -1,7 +1,8 @@
 package study.reactive.domain;
 
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
+
+import javax.persistence.*;
 
 /**
  * @author playjun
@@ -9,9 +10,26 @@ import lombok.ToString;
  */
 @Data
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "users")
+@EqualsAndHashCode
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String name;
+    private String location;
     private int age;
+    private String type;
 
+    public boolean isAdult() {
+        return age > 19;
+    }
+
+    public boolean liveInSeoul() {
+        return "seoul".equalsIgnoreCase(this.location);
+    }
 }

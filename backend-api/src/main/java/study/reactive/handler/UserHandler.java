@@ -7,7 +7,7 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import study.reactive.domain.User;
-import study.reactive.repository.UserRepository;
+import study.reactive.service.UserService;
 
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
@@ -19,24 +19,24 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
 @RequiredArgsConstructor
 public class UserHandler {
 
-    private final UserRepository userRepository;
+    private final UserService userService;
 
     public Mono<ServerResponse> insertUser(ServerRequest request) {
         return request.bodyToMono(User.class)
-            .flatMap(userRepository::insert)
+            .flatMap(userService::insert)
             .transform(usr -> ok().body(usr, User.class));
     }
 
     public Mono<ServerResponse> internalUsers(ServerRequest request) {
-        return ok().body(Flux.fromIterable(userRepository.getInternalUsers()), User.class);
+        return ok().body(Flux.fromIterable(userService.getInternalUsers()), User.class);
     }
 
     public Mono<ServerResponse> externalUsers(ServerRequest request) {
-        return ok().body(Flux.fromIterable(userRepository.getExternalUsers()), User.class);
+        return ok().body(Flux.fromIterable(userService.getExternalUsers()), User.class);
     }
 
     public Mono<ServerResponse> specialUsers(ServerRequest request) {
-        return ok().body(Flux.fromIterable(userRepository.getSpecialUsers()), User.class);
+        return ok().body(Flux.fromIterable(userService.getSpecialUsers()), User.class);
     }
 
 }
