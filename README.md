@@ -22,7 +22,7 @@ API 에서 사용되는 도메인 모듈
 
 ## 서버간 구조도
 
-![API 서버 간 통신](/resource/image/api.png)
+![API 서버 간 통신](/resource/image/api-flow.png)
 
 - `WebFlux` 와 `WebClient` 를 사용하며 클라이언트의  `Reactor` 의 `Mono` 와 `Flux` 를 이용해 **비동기** 로 처리한다.
 
